@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Cost-Effective Life — English / Tiếng Việt</title>
+<meta name="description" content="Unofficial English and Vietnamese reader for 高性价比人生指南 (A Cost-Effective Life Guide). 650 evidence-graded entries on lifespan, money, time and legal risk. The Chinese original is authoritative.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14151a" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46a8'/%3E%3Cpath d='M17 33l10 11 20-24' fill='none' stroke='white' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>
+/* Set the theme before first paint so the page never flashes the wrong one. */
+(function(){try{var s=localStorage.getItem('hltb-i18n-theme');
+var d=s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+document.documentElement.dataset.theme=d?'dark':'light';}catch(e){}})();
+</script>
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f7f7f9; --bg-mute:#eeeef2; --bg-card:#ffffff;
+  --t1:#1c1d22; --t2:#4a4c57; --t3:#73757f; --line:#e2e2e8; --line-soft:#edeef1;
+  --accent:#4f46a8; --accent-soft:#eceaf8; --accent-ink:#3a3380;
+  --a:#15803d; --a-bg:#e8f5ec; --b:#a16207; --b-bg:#fdf5e3; --c:#64748b; --c-bg:#f1f3f6;
+  --r3:#7c2d92; --r3-bg:#f6ebfa; --r2:#1d4ed8; --r2-bg:#e9eefc; --r1:#64748b; --r1-bg:#f1f3f6;
+  --warn:#9a3412; --warn-bg:#fdf0e8; --warn-line:#f3d5c2;
+  --shadow:0 1px 2px rgba(20,21,26,.05), 0 2px 8px rgba(20,21,26,.04);
+  --radius:12px;
+  --fs:16px;
+}
+:root[data-theme="dark"]{
+  --bg:#14151a; --bg-soft:#1b1c22; --bg-mute:#24262e; --bg-card:#1a1b21;
+  --t1:#eceef3; --t2:#b5b8c2; --t3:#878a95; --line:#2c2e37; --line-soft:#24262e;
+  --accent:#a99df0; --accent-soft:#272445; --accent-ink:#c3baf7;
+  --a:#5fcf8a; --a-bg:#17301f; --b:#e0b44c; --b-bg:#32280f; --c:#9aa4b2; --c-bg:#22252c;
+  --r3:#d49ae8; --r3-bg:#2d1b33; --r2:#8fb0f8; --r2-bg:#1a2340; --r1:#9aa4b2; --r1-bg:#22252c;
+  --warn:#f0a87c; --warn-bg:#331d10; --warn-line:#4d2f1b;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 2px 10px rgba(0,0,0,.22);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scrollbar-gutter:stable}
+body{
+  margin:0; background:var(--bg); color:var(--t1); font-size:var(--fs); line-height:1.7;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,
+    "Noto Sans","Noto Sans SC","Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+button{font:inherit; color:inherit; cursor:pointer; background:none; border:none}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
+
+/* ---------- header ---------- */
+header{
+  position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:saturate(1.4) blur(10px); border-bottom:1px solid var(--line);
+}
+.hwrap{max-width:1180px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.brand{display:flex; align-items:baseline; gap:10px; min-width:0; margin-right:auto}
+.brand b{font-size:17px; font-weight:650; letter-spacing:-.01em; white-space:nowrap}
+.brand span{font-size:13px; color:var(--t3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.seg{display:flex; background:var(--bg-mute); border-radius:9px; padding:3px; gap:2px}
+.seg button{padding:5px 13px; border-radius:7px; font-size:13.5px; font-weight:550; color:var(--t2); transition:background .12s,color .12s}
+.seg button[aria-pressed="true"]{background:var(--bg-card); color:var(--accent-ink); box-shadow:var(--shadow)}
+.iconbtn{width:34px; height:34px; display:grid; place-items:center; border-radius:9px; border:1px solid var(--line); color:var(--t2)}
+.iconbtn:hover{background:var(--bg-soft); color:var(--t1)}
+
+/* ---------- notice ---------- */
+.notice{
+  max-width:1180px; margin:16px auto 0; padding:12px 15px; border-radius:var(--radius);
+  background:var(--warn-bg); border:1px solid var(--warn-line); color:var(--warn);
+  font-size:13.5px; line-height:1.6; display:flex; gap:11px; align-items:flex-start;
+}
+.notice.hide{display:none}
+.notice p{margin:0}
+.notice b{font-weight:650}
+.notice .x{margin-left:auto; flex:none; color:inherit; opacity:.65; font-size:17px; line-height:1; padding:2px 4px}
+.notice .x:hover{opacity:1}
+
+/* ---------- layout ---------- */
+.shell{max-width:1180px; margin:0 auto; padding:18px 16px 72px; display:grid; gap:24px; grid-template-columns:234px 1fr}
+@media (max-width:900px){ .shell{grid-template-columns:1fr; gap:14px} }
+
+aside{align-self:start; position:sticky; top:74px; max-height:calc(100vh - 92px); overflow-y:auto; padding-right:4px}
+@media (max-width:900px){
+  aside{position:static; max-height:none; overflow:visible}
+  aside .panel{display:none}
+  aside.open .panel{display:block}
+}
+.fgroup{margin-bottom:20px}
+.fgroup h3{
+  margin:0 0 8px; font-size:11.5px; font-weight:700; letter-spacing:.07em;
+  text-transform:uppercase; color:var(--t3);
+}
+.chips{display:flex; flex-wrap:wrap; gap:6px}
+.chip{
+  padding:4px 10px; border-radius:999px; border:1px solid var(--line); background:var(--bg-card);
+  font-size:13px; color:var(--t2); transition:background .12s,border-color .12s,color .12s;
+}
+.chip:hover{border-color:var(--accent); color:var(--t1)}
+.chip[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent); color:var(--accent-ink); font-weight:550}
+.chip .n{opacity:.6; font-size:11.5px; margin-left:3px; font-variant-numeric:tabular-nums}
+.seclist{display:flex; flex-direction:column; gap:1px; max-height:none}
+.seclist button{
+  text-align:left; padding:5px 9px; border-radius:7px; font-size:13.5px; color:var(--t2);
+  display:flex; gap:8px; align-items:baseline; line-height:1.45;
+}
+.seclist button:hover{background:var(--bg-soft); color:var(--t1)}
+.seclist button[aria-pressed="true"]{background:var(--accent-soft); color:var(--accent-ink); font-weight:550}
+.seclist .num{flex:none; font-variant-numeric:tabular-nums; color:var(--t3); font-size:12px; min-width:17px}
+.seclist button[aria-pressed="true"] .num{color:var(--accent)}
+.seclist .zhflag{flex:none; font-size:10px; padding:0 4px; border-radius:4px; background:var(--bg-mute); color:var(--t3)}
+.switch{display:flex; align-items:center; gap:8px; font-size:13px; color:var(--t2); cursor:pointer; line-height:1.45}
+.switch input{accent-color:var(--accent); width:15px; height:15px; flex:none; margin:0}
+.clearall{font-size:13px; color:var(--accent); padding:2px 0}
+
+/* ---------- search + meta ---------- */
+.searchrow{display:flex; gap:9px; margin-bottom:14px}
+.search{flex:1; position:relative}
+.search input{
+  width:100%; padding:11px 36px 11px 38px; font-size:15px; border-radius:10px;
+  border:1px solid var(--line); background:var(--bg-card); color:var(--t1);
+}
+.search input:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.search svg{position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--t3); pointer-events:none}
+.search .clr{position:absolute; right:8px; top:50%; transform:translateY(-50%); color:var(--t3); padding:4px; border-radius:6px; display:none}
+.search.has .clr{display:block}
+.filterbtn{display:none; padding:0 14px; border:1px solid var(--line); border-radius:10px; font-size:14px; color:var(--t2)}
+@media (max-width:900px){ .filterbtn{display:block} }
+.meta{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:16px; font-size:13.5px; color:var(--t3)}
+.meta b{color:var(--t1); font-weight:650; font-variant-numeric:tabular-nums}
+.progress{margin-left:auto; display:flex; align-items:center; gap:7px}
+.bar{width:84px; height:5px; border-radius:3px; background:var(--bg-mute); overflow:hidden}
+.bar i{display:block; height:100%; background:var(--accent); border-radius:3px}
+
+/* ---------- section heading ---------- */
+.sechead{margin:26px 0 12px; padding-top:4px}
+.sechead:first-child{margin-top:0}
+.sechead h2{margin:0 0 5px; font-size:19px; font-weight:650; letter-spacing:-.01em; display:flex; align-items:baseline; gap:9px}
+.sechead h2 .num{color:var(--t3); font-variant-numeric:tabular-nums; font-weight:600; font-size:15px}
+.sechead .intro{margin:0; font-size:13.5px; color:var(--t2); line-height:1.65}
+.sechead .intro p{margin:0 0 5px}
+.sechead details summary{font-size:12.5px; color:var(--t3); cursor:pointer; list-style:none; padding:2px 0}
+.sechead details summary::-webkit-details-marker{display:none}
+.sechead details summary:hover{color:var(--accent)}
+.zhnote{
+  display:inline-flex; align-items:center; gap:5px; font-size:11.5px; padding:1px 7px;
+  border-radius:999px; background:var(--warn-bg); color:var(--warn); border:1px solid var(--warn-line);
+  font-weight:550; vertical-align:middle;
+}
+
+/* ---------- entry card ---------- */
+.card{
+  background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:14px 16px; margin-bottom:9px; scroll-margin-top:84px;
+}
+.card.flash{animation:flash 1.5s ease-out}
+@keyframes flash{0%,22%{background:var(--accent-soft); border-color:var(--accent)}100%{}}
+.card h4{margin:0 0 7px; font-size:15.5px; font-weight:620; line-height:1.5; display:flex; gap:8px; align-items:baseline}
+.card h4 .id{
+  flex:none; font-size:12px; font-variant-numeric:tabular-nums; color:var(--t3);
+  font-weight:600; padding-top:2px;
+}
+.badges{display:flex; flex-wrap:wrap; gap:5px; margin-bottom:9px}
+.badge{font-size:11.5px; padding:1px 8px; border-radius:999px; font-weight:600; white-space:nowrap}
+.badge.gA{background:var(--a-bg); color:var(--a)} .badge.gB{background:var(--b-bg); color:var(--b)} .badge.gC{background:var(--c-bg); color:var(--c)}
+.badge.r3{background:var(--r3-bg); color:var(--r3)} .badge.r2{background:var(--r2-bg); color:var(--r2)} .badge.r1{background:var(--r1-bg); color:var(--r1)}
+.badge.lens{background:var(--bg-mute); color:var(--t2)}
+.badge.cost{background:transparent; color:var(--t3); border:1px solid var(--line); font-weight:500}
+.badge.dis{background:var(--warn-bg); color:var(--warn)}
+.human{margin:0 0 10px; font-size:15px; line-height:1.72; color:var(--t1)}
+.rows{display:grid; gap:7px; font-size:13.5px; line-height:1.68; color:var(--t2)}
+.row{display:grid; grid-template-columns:86px 1fr; gap:11px}
+@media (max-width:560px){ .row{grid-template-columns:1fr; gap:1px} }
+.row dt{color:var(--t3); font-size:12px; font-weight:600; letter-spacing:.02em; padding-top:2px}
+.row dd{margin:0; min-width:0; overflow-wrap:anywhere}
+.row.src dd{font-size:12.5px; line-height:1.6; color:var(--t3)}
+.row.src dd div{margin-bottom:3px}
+.card .more{
+  margin-top:9px; display:flex; gap:14px; align-items:center; font-size:12.5px;
+  border-top:1px solid var(--line-soft); padding-top:8px;
+}
+.card .more button{color:var(--t3)}
+.card .more button:hover{color:var(--accent)}
+.orig{
+  margin-top:9px; padding:11px 13px; border-radius:9px; background:var(--bg-soft);
+  border:1px solid var(--line-soft); font-size:13px; line-height:1.72;
+}
+.orig h5{margin:0 0 7px; font-size:11.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--t3)}
+.orig .rows{font-size:13px}
+.ref{
+  color:var(--accent); border-bottom:1px dashed currentColor; cursor:pointer;
+  font-variant-numeric:tabular-nums;
+}
+.ref:hover{background:var(--accent-soft)}
+
+.empty{text-align:center; padding:56px 20px; color:var(--t3)}
+.empty b{display:block; color:var(--t1); font-size:16px; margin-bottom:6px; font-weight:600}
+.loading{text-align:center; padding:56px 20px; color:var(--t3); font-size:14px}
+.spin{width:22px;height:22px;border:2.5px solid var(--bg-mute);border-top-color:var(--accent);border-radius:50%;animation:sp .7s linear infinite;margin:0 auto 12px}
+@keyframes sp{to{transform:rotate(360deg)}}
+footer{max-width:1180px; margin:0 auto; padding:26px 16px 48px; border-top:1px solid var(--line); color:var(--t3); font-size:13px; line-height:1.7}
+footer a{color:var(--t2); text-decoration:underline; text-decoration-color:var(--line)}
+footer a:hover{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hwrap">
+    <div class="brand">
+      <b id="brandTitle">A Cost-Effective Life</b>
+      <span id="brandSub">unofficial translation</span>
+    </div>
+    <div class="seg" role="group" id="langSeg">
+      <button data-lang="zh" aria-pressed="false">中文</button>
+      <button data-lang="en" aria-pressed="true">English</button>
+      <button data-lang="vi" aria-pressed="false">Tiếng Việt</button>
+    </div>
+    <button class="iconbtn" id="themeBtn" title="Theme" aria-label="Toggle theme">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="notice" id="notice">
+  <div style="flex:none;padding-top:1px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 9v4M12 17h.01"/><circle cx="12" cy="12" r="9.5"/></svg>
+  </div>
+  <p id="noticeText"></p>
+  <button class="x" id="noticeX" aria-label="Dismiss">&times;</button>
+</div>
+
+<div class="shell">
+  <aside id="aside">
+    <button class="filterbtn" id="filterToggle" style="margin-bottom:12px;width:100%;padding:9px">Filters</button>
+    <div class="panel" id="panel"></div>
+  </aside>
+
+  <main>
+    <div class="searchrow">
+      <div class="search" id="searchWrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" type="search" autocomplete="off" spellcheck="false">
+        <button class="clr" id="qClear" aria-label="Clear">&times;</button>
+      </div>
+    </div>
+    <div class="meta" id="meta"></div>
+    <div id="results"><div class="loading"><div class="spin"></div><span id="loadingText">Loading…</span></div></div>
+  </main>
+</div>
+
+<footer id="footer"></footer>
+
+<script>
+'use strict';
+
+/* ============================================================
+   Unofficial English / Vietnamese reader for 高性价比人生指南.
+
+   The Chinese text in ../book/ is the authoritative version. This page never
+   edits it — it reads the originals and the translations side by side, so a
+   reader can always fall back to the source of truth.
+
+   Two things here are deliberately copied from ../index.html rather than
+   reimplemented, and must stay in sync with it: COST_W and the ratio formula.
+   If the main page changes how it grades cost-effectiveness, change it here too
+   or the two pages will disagree about the same entry.
+   ============================================================ */
+
+const LANGS = ['zh', 'en', 'vi'];
+const HTML_LANG = { zh:'zh-CN', en:'en', vi:'vi' };
+
+/* ---------- cost-effectiveness grading: keep in sync with ../index.html ---------- */
+const COST_W = { money:{'0':0,'少':1,'多':2}, time:{'少':0,'中':1,'多':2}, will:{'否':0,'些':1,'是':2} };
+function gradeRatio(level, cs){
+  return level === '大' ? (cs === 0 ? '极高' : (cs <= 2 ? '高' : '一般'))
+       : level === '中' ? (cs === 0 ? '高' : '一般') : '一般';
+}
+
+/* ---------- field labels per language ----------
+   Translators write translated labels; the cost-tag comment stays Chinese in
+   every language so the filters cannot drift apart between translations. */
+const LABELS = {
+  zh: { cost:'成本', human:'说人话', gain:'收益', grade:'证据等级', src:'来源', note:'备注' },
+  en: { cost:'Cost', human:'In plain words', gain:'Benefit', grade:'Evidence', src:'Sources', note:'Notes' },
+  vi: { cost:'Chi phí', human:'Nói đơn giản', gain:'Lợi ích', grade:'Mức bằng chứng', src:'Nguồn', note:'Ghi chú' },
+};
+const DISPUTED_RE = { zh:/^争议/, en:/^Disputed/i, vi:/^Có tranh cãi/i };
+
+/* ---------- tag value display ---------- */
+const TAG = {
+  money:{ '0':{zh:'不花钱',en:'Free',vi:'Không tốn tiền'}, '少':{zh:'花钱少',en:'Low cost',vi:'Tốn ít tiền'}, '多':{zh:'花钱多',en:'Costly',vi:'Tốn nhiều tiền'} },
+  time: { '少':{zh:'省时间',en:'Minutes',vi:'Vài phút'}, '中':{zh:'花些时间',en:'Hours',vi:'Vài giờ'}, '多':{zh:'很花时间',en:'Ongoing',vi:'Liên tục'} },
+  will: { '否':{zh:'不费毅力',en:'No willpower',vi:'Không cần nghị lực'}, '些':{zh:'要些毅力',en:'Some willpower',vi:'Cần ít nghị lực'}, '是':{zh:'很费毅力',en:'Sustained effort',vi:'Cần nhiều nghị lực'} },
+  level:{ '大':{zh:'收益大',en:'Large benefit',vi:'Lợi ích lớn'}, '中':{zh:'收益中',en:'Medium benefit',vi:'Lợi ích trung bình'}, '小':{zh:'收益小',en:'Small benefit',vi:'Lợi ích nhỏ'} },
+  lens: { '死亡率':{zh:'换寿命',en:'Lifespan',vi:'Tuổi thọ'}, '金钱':{zh:'换钱',en:'Money',vi:'Tiền'}, '时间':{zh:'换时间精力',en:'Time & energy',vi:'Thời gian & sức lực'}, '自由':{zh:'换人身自由',en:'Personal freedom',vi:'Tự do thân thể'} },
+  ratio:{ '极高':{zh:'性价比极高',en:'Very high value',vi:'Rất đáng làm'}, '高':{zh:'性价比高',en:'High value',vi:'Đáng làm'}, '一般':{zh:'性价比一般',en:'Moderate value',vi:'Vừa phải'} },
+};
+const tagText = (dim, val) => (TAG[dim]?.[val]?.[state.lang]) ?? val;
+
+/* ---------- UI strings ---------- */
+const UI = {
+  zh: {
+    title:'高性价比人生指南', sub:'中文原文',
+    notice:'<b>你正在读中文原文。</b>这是本书的权威版本。英文和越南文是非官方译本，仅供参考。',
+    search:'搜索条目、成本、收益、备注……', filters:'筛选条件', clear:'清除全部',
+    fSection:'章节', fGrade:'证据等级', fRatio:'性价比', fLens:'换回什么',
+    fMoney:'花钱', fTime:'花时间', fWill:'要毅力',
+    showUn:'包含未翻译的章节（中文原文）',
+    count:(n,t)=>`显示 <b>${n}</b> 条，共 ${t} 条`, none:'没有符合条件的条目',
+    noneHint:'试试减少筛选条件，或者换个关键词。',
+    loading:'正在读取正文……', failed:'读不到正文', failedHint:'这个页面要经 http 打开，直接双击本地文件读不了。',
+    translated:(d,t)=>`已翻译 ${d}/${t} 节`, untranslated:'未翻译',
+    showOrig:'对照中文原文', hideOrig:'收起原文', origHead:'中文原文',
+    jump:'跳到这一条', notLoaded:'这一节当前没有载入',
+    footer:`中文原文是权威版本，见 <a href="../README.md">仓库</a> 和 <a href="../index.html">官方检索页</a>。
+      英文、越南文为非官方译本，内容可能落后于原文。正文以 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 发布。
+      译本的规则见 <a href="TRANSLATION-GUIDE.md">翻译约定</a>。`,
+  },
+  en: {
+    title:'A Cost-Effective Life', sub:'unofficial translation',
+    notice:'<b>Unofficial translation.</b> The Chinese original is the authoritative version — check it before acting on anything here. Every law, benefit scheme and hotline in this book is <b>mainland China</b>; none of it has been adapted to another country.',
+    search:'Search entries, cost, benefit, notes…', filters:'Filters', clear:'Clear all',
+    fSection:'Section', fGrade:'Evidence', fRatio:'Value for money', fLens:'What you get back',
+    fMoney:'Money', fTime:'Time', fWill:'Willpower',
+    showUn:'Include untranslated sections (in Chinese)',
+    count:(n,t)=>`Showing <b>${n}</b> of ${t} entries`, none:'No entries match',
+    noneHint:'Try removing a filter, or searching for something else.',
+    loading:'Loading the text…', failed:'Could not load the text', failedHint:'This page has to be served over http. Opening the local file directly will not work.',
+    translated:(d,t)=>`${d} of ${t} sections translated`, untranslated:'not translated',
+    showOrig:'Show Chinese original', hideOrig:'Hide original', origHead:'Chinese original',
+    jump:'Jump to this entry', notLoaded:'That section is not loaded right now',
+    footer:`The Chinese text is authoritative — see the <a href="../README.md">repository</a> and the
+      <a href="../index.html">official search page</a>. English and Vietnamese are unofficial translations and may lag behind.
+      Text is published under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      The rules translators follow are in the <a href="TRANSLATION-GUIDE.md">translation contract</a>.`,
+  },
+  vi: {
+    title:'Sống hiệu quả chi phí', sub:'bản dịch không chính thức',
+    notice:'<b>Bản dịch không chính thức.</b> Bản tiếng Trung là bản có hiệu lực — hãy đối chiếu trước khi làm theo bất cứ điều gì ở đây. Mọi điều luật, chế độ và số điện thoại trong sách đều là của <b>Trung Quốc đại lục</b>, không điều chỉnh cho nước nào khác.',
+    search:'Tìm trong điều mục, chi phí, lợi ích, ghi chú…', filters:'Bộ lọc', clear:'Bỏ hết lọc',
+    fSection:'Chương', fGrade:'Mức bằng chứng', fRatio:'Mức đáng làm', fLens:'Đổi lại được gì',
+    fMoney:'Tiền', fTime:'Thời gian', fWill:'Nghị lực',
+    showUn:'Gồm cả chương chưa dịch (tiếng Trung)',
+    count:(n,t)=>`Hiện <b>${n}</b> trong ${t} điều`, none:'Không có điều nào khớp',
+    noneHint:'Thử bỏ một bộ lọc, hoặc tìm từ khác.',
+    loading:'Đang tải nội dung…', failed:'Không tải được nội dung', failedHint:'Trang này phải mở qua http. Mở trực tiếp file trên máy sẽ không chạy.',
+    translated:(d,t)=>`Đã dịch ${d}/${t} chương`, untranslated:'chưa dịch',
+    showOrig:'Xem nguyên văn tiếng Trung', hideOrig:'Ẩn nguyên văn', origHead:'Nguyên văn tiếng Trung',
+    jump:'Nhảy tới điều này', notLoaded:'Chương đó hiện chưa được tải',
+    footer:`Bản tiếng Trung là bản có hiệu lực — xem <a href="../README.md">repo</a> và
+      <a href="../index.html">trang tra cứu chính thức</a>. Bản tiếng Anh và tiếng Việt là bản dịch không chính thức, có thể chậm hơn bản gốc.
+      Nội dung phát hành theo <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      Quy ước dịch xem <a href="TRANSLATION-GUIDE.md">tại đây</a>.`,
+  },
+};
+const t = k => UI[state.lang][k];
+
+/* ---------- state ---------- */
+const DIMS = ['grade', 'ratio', 'lens', 'money', 'time', 'will'];
+const state = {
+  lang: 'en', q: '', sec: new Set(), showUn: false,
+  grade: new Set(), ratio: new Set(), lens: new Set(),
+  money: new Set(), time: new Set(), will: new Set(),
+};
+let MANIFEST = null;
+const CORPUS = {};       // CORPUS[lang][sec] = {n, title, intro[], entries[]}
+const FETCHED = {};      // FETCHED[lang+sec] = Promise, so a section loads once
+
+/* ============================================================
+   Parsing
+   ============================================================ */
+function parseSection(md, lang, num){
+  const L = LABELS[lang];
+  const lines = md.replace(/\r\n/g, '\n').split('\n');
+  const out = { n:num, title:'', intro:[], entries:[], lang };
+  let entry = null;
+  const flush = () => { if (entry) out.entries.push(entry); entry = null; };
+
+  // Accept both the full-width colon the Chinese text uses and a plain one.
+  const field = (key, line) => {
+    const re = new RegExp('^- ' + L[key].replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*[：:]\\s*(.*)$');
+    const m = re.exec(line);
+    return m ? m[1].trim() : null;
+  };
+
+  for (const raw of lines){
+    const line = raw.trimEnd();
+    let m, v;
+    if ((m = /^#\s+(\d+)\.\s*(.+)$/.exec(line))){ out.title = m[2].trim(); continue; }
+    if ((m = /^###\s+(\d+)\.\s*(.+)$/.exec(line))){
+      flush();
+      entry = { sec:num, n:m[1], title:m[2].trim(), cost:'', human:'', gain:'', grade:'', src:'', note:'',
+                money:'', time:'', will:'', level:'', lens:'' };
+      continue;
+    }
+    if ((m = /^<!--\s*成本标签:\s*(.*?)\s*-->/.exec(line)) && entry){
+      for (const kv of m[1].split(/\s+/)){
+        const [k, val] = kv.split('=');
+        if (k === '钱') entry.money = val;
+        else if (k === '时间') entry.time = val;
+        else if (k === '毅力') entry.will = val;
+        else if (k === '收益') entry.level = val;
+        else if (k === '口径') entry.lens = val;
+      }
+      continue;
+    }
+    if (entry){
+      for (const key of ['cost','human','gain','src','note']){
+        if ((v = field(key, line)) !== null){ entry[key] = v; break; }
+      }
+      if (v === null || v === undefined){
+        if ((v = field('grade', line)) !== null){
+          const g = /([ABC])/.exec(v);
+          if (g) entry.grade = g[1];
+          entry.gradeRaw = v;
+        }
+      }
+      continue;
+    }
+    // Everything before the first entry, minus the back-link, is the section intro.
+    if (line && !/^\[←/.test(line)) out.intro.push(line);
+  }
+  flush();
+
+  for (const e of out.entries){
+    e.cs = (COST_W.money[e.money] ?? 0) + (COST_W.time[e.time] ?? 0) + (COST_W.will[e.will] ?? 0);
+    e.ratio = gradeRatio(e.level, e.cs);
+    e.disputed = DISPUTED_RE[lang].test(e.note) || /（争议）|\(disputed\)|\(có tranh cãi\)/i.test(e.gradeRaw || '');
+    e.hay = [e.title, e.human, e.cost, e.gain, e.note, e.src]
+      .join('\n').replace(/\*\*/g, '').toLowerCase();
+    e.key = e.sec + '-' + e.n;
+  }
+  return out;
+}
+
+/* ============================================================
+   Loading
+   ============================================================ */
+async function getText(path){
+  const r = await fetch(path, { cache:'no-cache' });
+  if (!r.ok) throw new Error(path + ' → ' + r.status);
+  return r.text();
+}
+
+function pathFor(lang, sec){
+  return lang === 'zh' ? '../' + MANIFEST.sections[sec] : `${lang}/book/${sec}.md`;
+}
+
+/* Which language a section is actually shown in: the requested one if it has a
+   translation, otherwise Chinese. The caller decides whether to include
+   Chinese-only sections at all. */
+function effLang(lang, sec){
+  if (lang === 'zh') return 'zh';
+  return MANIFEST[lang].includes(sec) ? lang : 'zh';
+}
+
+function loadSection(lang, sec){
+  const k = lang + sec;
+  if (!FETCHED[k]){
+    FETCHED[k] = getText(pathFor(lang, sec))
+      .then(md => {
+        (CORPUS[lang] ||= {})[sec] = parseSection(md, lang, sec);
+      })
+      .catch(err => { console.warn('section failed', lang, sec, err.message); });
+  }
+  return FETCHED[k];
+}
+
+/* Sections to show for the current language, in order. */
+function visibleSections(){
+  const all = MANIFEST.zh;
+  if (state.lang === 'zh') return all;
+  return state.showUn ? all : all.filter(s => MANIFEST[state.lang].includes(s));
+}
+
+async function ensureLoaded(){
+  const secs = visibleSections();
+  await Promise.all(secs.map(s => loadSection(effLang(state.lang, s), s)));
+}
+
+/* Every entry currently in scope, flattened, with the language it rendered in. */
+function allEntries(){
+  const rows = [];
+  for (const sec of visibleSections()){
+    const el = effLang(state.lang, sec);
+    const s = CORPUS[el]?.[sec];
+    if (!s) continue;
+    for (const e of s.entries) rows.push(e);
+  }
+  return rows;
+}
+function sectionFor(sec){
+  return CORPUS[effLang(state.lang, sec)]?.[sec];
+}
+
+/* ============================================================
+   Inline markdown — just enough for what the entries actually contain:
+   bold, [text](url), <bare-url>, and loose urls.
+   ============================================================ */
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+function inline(src){
+  let s = esc(src);
+  s = s.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+    (_, txt, url) => `<a href="${url}" target="_blank" rel="noopener">${txt}</a>`);
+  s = s.replace(/&lt;(https?:\/\/[^&\s]+?)&gt;/g,
+    (_, url) => `<a href="${url}" target="_blank" rel="noopener">${url}</a>`);
+  s = s.replace(/(^|[\s(（])(https?:\/\/[^\s<)），。；]+)/g,
+    (_, pre, url) => `${pre}<a href="${url}" target="_blank" rel="noopener">${url}</a>`);
+  s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  return s;
+}
+
+/* Cross-references. Translations use §N.M; the Chinese original uses
+   第 N 节第 M 条 and, inside one section, a bare 第 M 条. Both become links. */
+function linkRefs(html, curSec){
+  html = html.replace(/§\s*(\d{1,2})\.(\d{1,3})/g,
+    (m, s, n) => `<a class="ref" data-go="${pad(s)}-${n}">§${pad(s)}.${n}</a>`);
+  html = html.replace(/第\s*(\d{1,2})\s*节第\s*(\d{1,3})\s*条/g,
+    (m, s, n) => `<a class="ref" data-go="${pad(s)}-${n}">${m}</a>`);
+  if (curSec){
+    // A bare 第 M 条 means this section — but only outside the sources column,
+    // where almost every 第 N 条 is a statute article instead.
+    html = html.replace(/(^|[^节])第\s*(\d{1,3})\s*条/g,
+      (m, pre, n) => `${pre}<a class="ref" data-go="${curSec}-${n}">第 ${n} 条</a>`);
+  }
+  return html;
+}
+const pad = s => String(s).padStart(2, '0');
+
+/* The sources column packs several citations onto one line, separated by ；. */
+function srcHtml(src){
+  return src.split(/；/).map(p => p.trim()).filter(Boolean)
+    .map(p => `<div>${inline(p)}</div>`).join('');
+}
+
+/* ============================================================
+   Rendering
+   ============================================================ */
+function matches(e){
+  if (state.sec.size && !state.sec.has(e.sec)) return false;
+  if (state.grade.size && !state.grade.has(e.grade)) return false;
+  if (state.ratio.size && !state.ratio.has(e.ratio)) return false;
+  if (state.lens.size && !state.lens.has(e.lens)) return false;
+  if (state.money.size && !state.money.has(e.money)) return false;
+  if (state.time.size && !state.time.has(e.time)) return false;
+  if (state.will.size && !state.will.has(e.will)) return false;
+  if (state.q){
+    const terms = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!terms.every(w => e.hay.includes(w))) return false;
+  }
+  return true;
+}
+
+function entryCard(e){
+  const L = LABELS[e.lang || state.lang];
+  const card = document.createElement('article');
+  card.className = 'card';
+  card.id = 'e-' + e.key;
+
+  const rows = [];
+  const row = (cls, dt, ddHtml) =>
+    `<div class="row ${cls}"><dt>${esc(dt)}</dt><dd>${ddHtml}</dd></div>`;
+  if (e.cost) rows.push(row('', L.cost, linkRefs(inline(e.cost), e.sec)));
+  if (e.gain) rows.push(row('', L.gain, linkRefs(inline(e.gain), e.sec)));
+  if (e.note) rows.push(row('', L.note, linkRefs(inline(e.note), e.sec)));
+  if (e.src)  rows.push(row('src', L.src, srcHtml(e.src)));
+
+  const badges = [];
+  if (e.grade) badges.push(`<span class="badge g${e.grade}">${e.grade}</span>`);
+  if (e.ratio) badges.push(`<span class="badge r${ {'极高':3,'高':2,'一般':1}[e.ratio] }">${esc(tagText('ratio', e.ratio))}</span>`);
+  if (e.lens)  badges.push(`<span class="badge lens">${esc(tagText('lens', e.lens))}</span>`);
+  if (e.disputed) badges.push(`<span class="badge dis">${state.lang==='zh'?'争议':state.lang==='vi'?'tranh cãi':'disputed'}</span>`);
+  for (const d of ['money','time','will']) if (e[d]) badges.push(`<span class="badge cost">${esc(tagText(d, e[d]))}</span>`);
+
+  card.innerHTML =
+    `<h4><span class="id">§${e.sec}.${e.n}</span><span>${linkRefs(inline(e.title), e.sec)}</span></h4>` +
+    `<div class="badges">${badges.join('')}</div>` +
+    (e.human ? `<p class="human">${linkRefs(inline(e.human), e.sec)}</p>` : '') +
+    `<dl class="rows">${rows.join('')}</dl>` +
+    (e.lang !== 'zh' ? `<div class="more"><button data-orig="${e.key}">${esc(t('showOrig'))}</button></div>` : '');
+
+  return card;
+}
+
+function render(){
+  const box = document.getElementById('results');
+  const rows = allEntries();
+  const hits = rows.filter(matches);
+
+  // Count line + translation progress
+  const done = state.lang === 'zh' ? MANIFEST.zh.length : MANIFEST[state.lang].length;
+  const total = MANIFEST.zh.length;
+  const pct = Math.round(done / total * 100);
+  document.getElementById('meta').innerHTML =
+    `<span>${t('count')(hits.length, rows.length)}</span>` +
+    (state.lang === 'zh' ? '' :
+      `<span class="progress" title="${esc(t('translated')(done,total))}">
+         <span>${esc(t('translated')(done,total))}</span>
+         <span class="bar"><i style="width:${pct}%"></i></span>
+       </span>`);
+
+  if (!hits.length){
+    box.innerHTML = `<div class="empty"><b>${esc(t('none'))}</b>${esc(t('noneHint'))}</div>`;
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
+  let curSec = null;
+  for (const e of hits){
+    if (e.sec !== curSec){
+      curSec = e.sec;
+      const s = sectionFor(curSec);
+      const head = document.createElement('div');
+      head.className = 'sechead';
+      head.id = 'sec-' + curSec;
+      const isZhFallback = state.lang !== 'zh' && e.lang === 'zh';
+      head.innerHTML =
+        `<h2><span class="num">${curSec}</span><span>${esc(s?.title || '')}</span>` +
+        (isZhFallback ? ` <span class="zhnote">${esc(t('untranslated'))}</span>` : '') + `</h2>` +
+        (s?.intro?.length
+          ? `<details><summary>${state.lang==='zh'?'节首导读':state.lang==='vi'?'Giới thiệu chương':'Section intro'}</summary>
+             <div class="intro">${s.intro.map(p => `<p>${linkRefs(inline(p), curSec)}</p>`).join('')}</div></details>`
+          : '');
+      frag.appendChild(head);
+    }
+    frag.appendChild(entryCard(e));
+  }
+  box.innerHTML = '';
+  box.appendChild(frag);
+}
+
+/* ---------- filter panel ---------- */
+function chipRow(dim, values){
+  return `<div class="chips">` + values.map(v =>
+    `<button class="chip" data-dim="${dim}" data-val="${esc(v)}" aria-pressed="${state[dim].has(v)}">${esc(dim==='grade'?v:tagText(dim,v))}</button>`
+  ).join('') + `</div>`;
+}
+
+function renderPanel(){
+  const p = document.getElementById('panel');
+  const secs = visibleSections();
+  const counts = {};
+  for (const e of allEntries()) counts[e.sec] = (counts[e.sec] || 0) + 1;
+
+  p.innerHTML = `
+    <div class="fgroup">
+      <h3>${esc(t('filters'))}</h3>
+      <button class="clearall" id="clearAll">${esc(t('clear'))}</button>
+    </div>
+    ${state.lang === 'zh' ? '' : `
+    <div class="fgroup">
+      <label class="switch"><input type="checkbox" id="showUn" ${state.showUn?'checked':''}>
+        <span>${esc(t('showUn'))}</span></label>
+    </div>`}
+    <div class="fgroup"><h3>${esc(t('fGrade'))}</h3>${chipRow('grade', ['A','B','C'])}</div>
+    <div class="fgroup"><h3>${esc(t('fRatio'))}</h3>${chipRow('ratio', ['极高','高','一般'])}</div>
+    <div class="fgroup"><h3>${esc(t('fLens'))}</h3>${chipRow('lens', ['死亡率','金钱','时间','自由'])}</div>
+    <div class="fgroup"><h3>${esc(t('fMoney'))}</h3>${chipRow('money', ['0','少','多'])}</div>
+    <div class="fgroup"><h3>${esc(t('fTime'))}</h3>${chipRow('time', ['少','中','多'])}</div>
+    <div class="fgroup"><h3>${esc(t('fWill'))}</h3>${chipRow('will', ['否','些','是'])}</div>
+    <div class="fgroup">
+      <h3>${esc(t('fSection'))}</h3>
+      <div class="seclist">${secs.map(s => {
+        const sec = sectionFor(s);
+        const zhFlag = state.lang !== 'zh' && !MANIFEST[state.lang].includes(s);
+        return `<button data-dim="sec" data-val="${s}" aria-pressed="${state.sec.has(s)}">
+          <span class="num">${s}</span>
+          <span>${esc(sec?.title || '…')}</span>
+          ${zhFlag ? `<span class="zhflag">中</span>` : ''}
+          <span class="n" style="margin-left:auto">${counts[s] ?? 0}</span>
+        </button>`;
+      }).join('')}</div>
+    </div>`;
+}
+
+/* ---------- chrome that depends on language ---------- */
+function applyLangChrome(){
+  document.documentElement.lang = HTML_LANG[state.lang];
+  document.getElementById('brandTitle').textContent = t('title');
+  document.getElementById('brandSub').textContent = t('sub');
+  document.getElementById('q').placeholder = t('search');
+  document.getElementById('noticeText').innerHTML = t('notice');
+  document.getElementById('filterToggle').textContent = t('filters');
+  document.getElementById('footer').innerHTML = t('footer');
+  // The loading placeholder only exists until the first render replaces #results,
+  // so this is the one lookup here that is allowed to come back empty.
+  const loading = document.getElementById('loadingText');
+  if (loading) loading.textContent = t('loading');
+  for (const b of document.querySelectorAll('#langSeg button'))
+    b.setAttribute('aria-pressed', String(b.dataset.lang === state.lang));
+}
+
+/* ---------- url state ---------- */
+function writeUrl(){
+  const p = new URLSearchParams();
+  if (state.lang !== 'en') p.set('lang', state.lang);
+  if (state.q) p.set('q', state.q);
+  if (state.sec.size) p.set('sec', [...state.sec].join(','));
+  for (const d of DIMS) if (state[d].size) p.set(d, [...state[d]].join(','));
+  if (state.showUn) p.set('all', '1');
+  const qs = p.toString();
+  history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+}
+function readUrl(){
+  const p = new URLSearchParams(location.search);
+  const lang = p.get('lang');
+  if (LANGS.includes(lang)) state.lang = lang;
+  state.q = p.get('q') || '';
+  state.sec = new Set((p.get('sec') || '').split(',').filter(Boolean));
+  for (const d of DIMS) state[d] = new Set((p.get(d) || '').split(',').filter(Boolean));
+  state.showUn = p.get('all') === '1';
+}
+
+/* ---------- refresh ---------- */
+let busy = false;
+async function refresh({ reloadPanel = true } = {}){
+  if (busy) return;
+  busy = true;
+  try {
+    await ensureLoaded();
+    if (reloadPanel) renderPanel();
+    render();
+    writeUrl();
+  } finally { busy = false; }
+}
+
+/* ---------- jump to an entry, clearing filters that hide it ---------- */
+async function goTo(key){
+  const [sec, n] = key.split('-');
+  if (!MANIFEST.zh.includes(sec)) return;
+  // If that section is untranslated and hidden, reveal it.
+  if (state.lang !== 'zh' && !MANIFEST[state.lang].includes(sec) && !state.showUn){
+    state.showUn = true;
+  }
+  if (state.sec.size && !state.sec.has(sec)) state.sec = new Set();
+  await refresh();
+  let el = document.getElementById('e-' + key);
+  if (!el){
+    // A filter other than section is hiding it — drop them all and retry once.
+    state.q = ''; document.getElementById('q').value = '';
+    for (const d of DIMS) state[d] = new Set();
+    document.getElementById('searchWrap').classList.remove('has');
+    await refresh();
+    el = document.getElementById('e-' + key);
+  }
+  if (el){
+    el.scrollIntoView({ behavior:'smooth', block:'start' });
+    el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+  }
+}
+
+/* ---------- show the Chinese original under a translated entry ---------- */
+async function toggleOriginal(key, btn){
+  const card = document.getElementById('e-' + key);
+  if (!card) return;
+  const open = card.querySelector('.orig');
+  if (open){ open.remove(); btn.textContent = t('showOrig'); return; }
+
+  const [sec, n] = key.split('-');
+  await loadSection('zh', sec);
+  const z = CORPUS.zh?.[sec]?.entries.find(x => x.n === n);
+  if (!z){ btn.textContent = t('notLoaded'); return; }
+
+  const L = LABELS.zh;
+  const row = (dt, dd) => `<div class="row"><dt>${esc(dt)}</dt><dd>${dd}</dd></div>`;
+  const box = document.createElement('div');
+  box.className = 'orig';
+  box.innerHTML = `<h5>${esc(t('origHead'))}</h5>` +
+    `<p class="human" style="font-size:14px;margin-bottom:8px"><strong>${inline(z.title)}</strong></p>` +
+    `<dl class="rows">` +
+      (z.human ? row(L.human, inline(z.human)) : '') +
+      (z.cost ? row(L.cost, inline(z.cost)) : '') +
+      (z.gain ? row(L.gain, inline(z.gain)) : '') +
+      (z.note ? row(L.note, inline(z.note)) : '') +
+    `</dl>`;
+  card.appendChild(box);
+  btn.textContent = t('hideOrig');
+}
+
+/* ============================================================
+   Events
+   ============================================================ */
+function wire(){
+  // language
+  document.getElementById('langSeg').addEventListener('click', async ev => {
+    const b = ev.target.closest('button[data-lang]');
+    if (!b || b.dataset.lang === state.lang) return;
+    state.lang = b.dataset.lang;
+    // Section filters are language-independent (they are numbers), so they survive.
+    applyLangChrome();
+    await refresh();
+  });
+
+  // theme
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const dark = document.documentElement.dataset.theme === 'dark';
+    document.documentElement.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('hltb-i18n-theme', dark ? 'light' : 'dark'); } catch (e) {}
+  });
+
+  // notice
+  document.getElementById('noticeX').addEventListener('click', () => {
+    document.getElementById('notice').classList.add('hide');
+    try { localStorage.setItem('hltb-i18n-notice', 'off'); } catch (e) {}
+  });
+  try { if (localStorage.getItem('hltb-i18n-notice') === 'off') document.getElementById('notice').classList.add('hide'); } catch (e) {}
+
+  // search
+  const q = document.getElementById('q');
+  const wrap = document.getElementById('searchWrap');
+  let timer = null;
+  q.addEventListener('input', () => {
+    wrap.classList.toggle('has', !!q.value);
+    clearTimeout(timer);
+    timer = setTimeout(() => { state.q = q.value.trim(); render(); writeUrl(); }, 140);
+  });
+  document.getElementById('qClear').addEventListener('click', () => {
+    q.value = ''; state.q = ''; wrap.classList.remove('has'); render(); writeUrl(); q.focus();
+  });
+
+  // filters (delegated — the panel is re-rendered on every language change)
+  document.getElementById('panel').addEventListener('click', async ev => {
+    const chip = ev.target.closest('[data-dim]');
+    if (chip){
+      const { dim, val } = chip.dataset;
+      state[dim].has(val) ? state[dim].delete(val) : state[dim].add(val);
+      renderPanel(); render(); writeUrl();
+      return;
+    }
+    if (ev.target.closest('#clearAll')){
+      state.q = ''; q.value = ''; wrap.classList.remove('has');
+      state.sec = new Set();
+      for (const d of DIMS) state[d] = new Set();
+      renderPanel(); render(); writeUrl();
+    }
+  });
+  document.getElementById('panel').addEventListener('change', async ev => {
+    if (ev.target.id === 'showUn'){ state.showUn = ev.target.checked; await refresh(); }
+  });
+
+  // mobile filter drawer
+  document.getElementById('filterToggle').addEventListener('click', () => {
+    document.getElementById('aside').classList.toggle('open');
+  });
+
+  // cards: cross-refs and the original-text toggle
+  document.getElementById('results').addEventListener('click', ev => {
+    const ref = ev.target.closest('.ref[data-go]');
+    if (ref){ ev.preventDefault(); goTo(ref.dataset.go); return; }
+    const o = ev.target.closest('button[data-orig]');
+    if (o) toggleOriginal(o.dataset.orig, o);
+  });
+
+  // keyboard: / focuses search, Esc clears it
+  document.addEventListener('keydown', ev => {
+    if (ev.key === '/' && !/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)){
+      ev.preventDefault(); q.focus();
+    } else if (ev.key === 'Escape' && document.activeElement === q){
+      q.value = ''; state.q = ''; wrap.classList.remove('has'); render(); writeUrl();
+    }
+  });
+}
+
+/* ============================================================
+   Boot
+   ============================================================ */
+(async function init(){
+  readUrl();
+  wire();
+  applyLangChrome();
+  document.getElementById('q').value = state.q;
+  if (state.q) document.getElementById('searchWrap').classList.add('has');
+
+  try {
+    MANIFEST = await (await fetch('manifest.json', { cache:'no-cache' })).json();
+  } catch (err){
+    document.getElementById('results').innerHTML =
+      `<div class="empty"><b>${esc(t('failed'))}</b>${esc(t('failedHint'))}</div>`;
+    return;
+  }
+  // A language with nothing translated yet would show an empty page; fall back
+  // to including the Chinese sections so the reader sees the book, not a void.
+  if (state.lang !== 'zh' && !MANIFEST[state.lang].length) state.showUn = true;
+  await refresh();
+})();
+</script>
+</body>
+</html>
