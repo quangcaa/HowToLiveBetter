@@ -164,6 +164,16 @@ Three rules:
    is unambiguous and linkable.
 2. **Always keep the anchor words** in brackets, translated. They are what lets a reader —
    and a reviewer — tell whether the reference points where it claims to.
+
+   Two shapes satisfy this, and both are correct:
+   - **Anchor after** — the normal case in an entry body: `see §8.24 (bride price)`.
+   - **Anchor before** — the section-opening navigation block, which the Chinese original
+     writes as `系安全带（第 1 条）`: `wear a seat belt (§1.2)`. Keep that order; the short
+     name in front is the anchor.
+
+   Two adjacent references may **share one bracket** when the anchor covers both:
+   `see §19.9 and §19.10 (hazard notice and health checks)`. Do not repeat the bracket just
+   to satisfy a checker — a reader can already tell where the pair points.
 3. **Never invent a reference, and never drop one.** If you cannot tell what section a bare
    `第 11 条` belongs to, it is the section you are translating.
 
