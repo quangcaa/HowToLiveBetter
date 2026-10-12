@@ -89,8 +89,10 @@ Then check your work against section 8 of the guide before you call it done.
 ## Known gaps
 
 - The long-form essays in `../docs/` are not translated.
-- The README, the glossary of statistical terms and the section index are not translated;
-  the reader page carries its own interface strings instead.
+- The glossary and the section index now have unofficial English and Vietnamese copies
+  in [en/README.md](en/README.md) and [vi/README.md](vi/README.md). The Chinese
+  [README](../README.md) stays authoritative, and its numbers are the ones the build updates.
+  The reader page still carries its own interface strings.
 - Cross-references to sections that are not yet translated resolve to the Chinese entry.
 
 ---

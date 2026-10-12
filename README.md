@@ -1,5 +1,7 @@
 <div align="center">
 
+中文 · [English](i18n/en/README.md) · [Tiếng Việt](i18n/vi/README.md)
+
 <img src="og.png" alt="高性价比人生指南 —— 用最少的钱、时间和精力，换回最多的寿命、金钱和人身自由" width="820">
 
 # 高性价比人生指南
