@@ -336,7 +336,7 @@ const UI = {
     loading:'正在读取正文……', failed:'读不到正文', failedHint:'这个页面要经 http 打开，直接双击本地文件读不了。',
     prog:(d,t)=>`已翻译 ${d}/${t} 节`, untrans:'未翻译',
     more:'展开', less:'收起', showZh:'对照中文原文', hideZh:'收起原文', zhHead:'中文原文', notLoaded:'这一节当前没有载入',
-    footer:`中文原文是权威版本，见 <a href="../README.md">仓库</a> 和 <a href="../index.html">官方检索页</a>。英文、越南文为非官方译本，内容可能落后于原文。正文以 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 发布。译本规则见 <a href="TRANSLATION-GUIDE.md">翻译约定</a>。`,
+    footer:`出处：<a href="https://github.com/eternity4719/HowToLiveBetter">「高性价比人生指南」</a>。正文按 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> 发布。英文和越南文是非官方译本，跟随 2026-10-08 的中文原文，可能落后。中文检索页在<a href="../index.html">这里</a>。译本规则见 <a href="TRANSLATION-GUIDE.md">翻译约定</a>。`,
   },
   en:{
     title:'A Cost-Effective Life', search:'Search entries, cost, benefit, notes…', filters:'Filters', clear:'Clear all',
@@ -347,7 +347,7 @@ const UI = {
     loading:'Loading the text…', failed:'Could not load the text', failedHint:'This page has to be served over http. Opening the local file directly will not work.',
     prog:(d,t)=>`${d}/${t} sections translated`, untrans:'not translated',
     more:'Details', less:'Hide', showZh:'Show Chinese original', hideZh:'Hide original', zhHead:'Chinese original', notLoaded:'That section is not loaded',
-    footer:`The Chinese text is authoritative — see the <a href="../README.md">repository</a> and the <a href="../index.html">official search page</a>. English and Vietnamese are unofficial translations and may lag behind. Text is published under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Translators follow the <a href="TRANSLATION-GUIDE.md">translation contract</a>.`,
+    footer:`Source: <a href="https://github.com/eternity4719/HowToLiveBetter">高性价比人生指南</a>. Text is published under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. English and Vietnamese are unofficial translations of the Chinese text as of 2026-10-08, and may lag behind. The Chinese search page on this site is <a href="../index.html">here</a>. The <a href="TRANSLATION-GUIDE.md">translation contract</a> is for translators.`,
   },
   vi:{
     title:'Sống hiệu quả chi phí', search:'Tìm trong điều mục, chi phí, lợi ích, ghi chú…', filters:'Bộ lọc', clear:'Bỏ hết lọc',
@@ -358,7 +358,7 @@ const UI = {
     loading:'Đang tải nội dung…', failed:'Không tải được nội dung', failedHint:'Trang này phải mở qua http. Mở trực tiếp file trên máy sẽ không chạy.',
     prog:(d,t)=>`Đã dịch ${d}/${t} chương`, untrans:'chưa dịch',
     more:'Chi tiết', less:'Thu gọn', showZh:'Xem nguyên văn tiếng Trung', hideZh:'Ẩn nguyên văn', zhHead:'Nguyên văn tiếng Trung', notLoaded:'Chương đó chưa được tải',
-    footer:`Bản tiếng Trung là bản có hiệu lực — xem <a href="../README.md">repo</a> và <a href="../index.html">trang tra cứu chính thức</a>. Bản tiếng Anh và tiếng Việt là bản dịch không chính thức, có thể chậm hơn bản gốc. Nội dung theo <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Quy ước dịch xem <a href="TRANSLATION-GUIDE.md">tại đây</a>.`,
+    footer:`Nguồn: <a href="https://github.com/eternity4719/HowToLiveBetter">高性价比人生指南</a>. Nội dung theo <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Bản tiếng Anh và tiếng Việt là bản dịch không chính thức, theo bản tiếng Trung ngày 2026-10-08, có thể chậm hơn bản gốc. Trang tra cứu tiếng Trung trên site này ở <a href="../index.html">đây</a>. Quy ước dịch ở <a href="TRANSLATION-GUIDE.md">đây</a>.`,
   },
 };
 const t = k => UI[state.lang][k];
